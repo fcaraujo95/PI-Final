@@ -1,0 +1,55 @@
+<menu-simples-component voltarPara="home"></menu-simples-component>
+
+<h1 class="title-consulta">Cadastro Usuario</h1>
+
+<div class="container">
+  <div class="container1">
+    <label class="label-form" class="label-form"for="usuario">Nome</label>
+    <input type="text" class="input-form" name="firstname" id="usuario" [(ngModel)]="usuario.nome" placeholder="Nome">
+    <label class="label-form" class="label-form"for="usuario">Sobrenome</label>
+    <input type="text" class="input-form" name="sobrenome" id="sobrenome" [(ngModel)]="usuario.sobrenome" placeholder="Sobrenome">
+    <label class="label-form" class="label-form"for="usuario">CPF</label>
+    <input type="text" class="input-form" name="cpf" id="cpf" [(ngModel)]="usuario.cpf" placeholder="CPF"><br>
+  </div>
+
+  <div class="container2">
+    <label class="label-form" class="label-form"for="usuario">Data Nascimento</label>
+    <input type="date" class="input-form" name="data" id="data" [(ngModel)]="usuario.dataDeNascimento" placeholder="Data Nascimento">
+    <label class="label-form" class="label-form"for="usuario">Sexo</label>
+    <input type="radio" name="gender" [(ngModel)]="usuario.sexo" value="M">Masculino
+    <input type="radio" name="gender" [(ngModel)]="usuario.sexo" value="F">Feminino<br>
+  </div>
+
+  <div class="container3">
+    <label class="label-form" class="label-form"for="usuario">CEP</label>
+    <input type="text" class="input-form" name="cep" id="cep" [(ngModel)]="usuario.cep" placeholder="CEP">
+    <label class="label-form" class="label-form"for="usuario">Logadouro</label>
+    <input type="text" class="input-form" name="logadouro" id="logadouro" [(ngModel)]="usuario.logadouro" placeholder="Logadouro">
+    <label class="label-form" class="label-form"for="usuario">Numero</label>
+    <input type="text" class="input-form" name="num" id="num" [(ngModel)]="usuario.numero" placeholder="numero"><br>
+  </div>
+
+  <div class="container4">
+    <label class="label-form" class="label-form"for="usuario">Complemento</label>
+    <input type="text" class="input-form" name="compl" id="compl" [(ngModel)]="usuario.complemento" placeholder="Complemento">
+    <label class="label-form" class="label-form"for="usuario">Bairro</label>
+    <input type="text" class="input-form" name="bairro" id="bairro" [(ngModel)]="usuario.bairro" placeholder="Bairro"><br>
+  </div>
+
+  <div class="container5">
+    <label class="label-form" class="label-form"for="usuario">Usuario</label>
+    <input type="text" class="input-form" name="compl" id="usrnm" [(ngModel)]="usuario.login" placeholder="Username">
+    <label class="label-form" class="label-form"for="usuario">Senha</label>
+    <input type="password" class="input-form" name="compl" id="pwd" [(ngModel)]="usuario.chave" placeholder="Password">
+  </div>
+
+  <select>
+    <option [(ngModel)]="usuario.cidade" *ngFor="let cidade of localizacao" value="{{cidade}}">
+      {{cidade.cidade}}
+    </option>
+  </select>
+
+
+
+  <button type="button" class="botao-form" (click)="cadastrar()">Cadastrar</button>
+</div>

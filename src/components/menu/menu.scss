@@ -1,0 +1,30 @@
+.nav-item {
+  font-family: sans-serif;
+  cursor: pointer;
+}
+
+.navbar-brand {
+  font-family: sans-serif;
+}
+
+.sumir {
+  display: none;
+}
+
+.aparecer {
+
+}
+
+.navbar-nav[_ngcontent-c1] {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.active {
+  color: white;
+}
