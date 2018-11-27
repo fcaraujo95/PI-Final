@@ -16,4 +16,20 @@ export class Pessoa {
   public dataDeNascimento: string;
   public sexo: string;
   public cidade: Cidade;
+
+  constructor() {
+    this.idPessoa = 0;
+    this.nome = '';
+    this.sobrenome = '';
+    this.cpf = '';
+    this.cep = '';
+    this.logadouro = '';
+    this.bairro = '';
+    this.complemento = '';
+    this.numero = '';
+    this.contatos = [];
+    this.dataDeNascimento = '';
+    this.sexo = '';
+    //this.cidade = new Cidade();
+  }
 }

@@ -16,7 +16,8 @@ import { CompraComponent } from '../pages/compra/compra';
 import { ClienteComponent } from '../pages/cliente/cliente';
 import { VendaComponent } from '../pages/venda/venda';
 import { MenuComponent } from '../components/menu/menu';
-import { ConsultaUsuarioDialog } from '../dialogs/consulta-usuario/consulta-usuario';
+import { UsuarioCadastrarComponent } from '../pages/usuario-cadastrar/usuario-cadastrar';
+import { UsuarioConsultarComponent } from '../pages/usuario-consultar/usuario-consultar';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MenuSimplesComponent } from '../components/menu-simples/menu-simples';
 
@@ -54,9 +55,15 @@ const appRoutes: Routes = [
     component: VendaComponent
   },
   {
-    path: 'consulta-usuario',
-    component: ConsultaUsuarioDialog
+    path: 'usuario-cadastrar',
+    component: UsuarioCadastrarComponent
+  },
+  {
+    path: 'usuario-consultar',
+    component: UsuarioConsultarComponent
   }
+
+
 ];
 
 @NgModule({
@@ -71,7 +78,8 @@ const appRoutes: Routes = [
     ClienteComponent,
     VendaComponent,
     MenuComponent,
-    ConsultaUsuarioDialog,
+    UsuarioCadastrarComponent,
+    UsuarioConsultarComponent,
     MenuSimplesComponent
   ],
   imports: [
@@ -88,7 +96,8 @@ const appRoutes: Routes = [
     BrowserAnimationsModule
   ],
   entryComponents: [
-    ConsultaUsuarioDialog
+    UsuarioCadastrarComponent,
+    UsuarioConsultarComponent
   ],
   providers: [
     Http,

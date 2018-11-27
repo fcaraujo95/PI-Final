@@ -1,6 +1,6 @@
 <menu-simples-component voltarPara="home"></menu-simples-component>
 
-<h1 class="title-consulta">Cadastro Usuario</h1>
+<h1 class="title-consulta">Cadastro de Usuario</h1>
 
 <div class="container">
   <div class="container1">
@@ -19,9 +19,9 @@
     <input type="radio" name="gender" [(ngModel)]="usuario.sexo" value="M">Masculino
     <input type="radio" name="gender" [(ngModel)]="usuario.sexo" value="F">Feminino<br>
   </div>
-
+  
   <div class="container3">
-    <label class="label-form" class="label-form"for="usuario">CEP</label>
+    <label class="label-form" class="label-form" maxlength="8"  for="usuario">CEP</label>
     <input type="text" class="input-form" name="cep" id="cep" [(ngModel)]="usuario.cep" placeholder="CEP">
     <label class="label-form" class="label-form"for="usuario">Logadouro</label>
     <input type="text" class="input-form" name="logadouro" id="logadouro" [(ngModel)]="usuario.logadouro" placeholder="Logadouro">
@@ -43,13 +43,11 @@
     <input type="password" class="input-form" name="compl" id="pwd" [(ngModel)]="usuario.chave" placeholder="Password">
   </div>
 
-  <select>
-    <option [(ngModel)]="usuario.cidade" *ngFor="let cidade of localizacao" value="{{cidade}}">
-      {{cidade.cidade}}
-    </option>
+  <label class="label-form" class="label-form"for="usuario">Cidade </label>
+  <select [(ngModel)]="usuario.cidade">
+    <option *ngFor="let cidade of localizacao" [ngValue]="cidade">  {{cidade.cidade}}</option>
   </select>
-
-
-
+  <br>
+  
   <button type="button" class="botao-form" (click)="cadastrar()">Cadastrar</button>
 </div>

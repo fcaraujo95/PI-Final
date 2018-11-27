@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material';
-import { ConsultaUsuarioDialog } from '../../dialogs/consulta-usuario/consulta-usuario';
 import { Router } from '@angular/router';
+import { Usuario } from 'src/models/usuario';
 
 @Component({
   selector: 'home-page',
@@ -15,7 +15,12 @@ export class HomePageComponent {
               private router: Router ) { }
 
   goToCadastroUsuario(): void {
-    this.router.navigate(['/consulta-usuario']);
+    this.router.navigate(['/usuario-cadastrar'], {queryParams: new Usuario()});
+    // this.router.navigate(['/usuario-cadastrar']);
+  }
+
+  goToConsultarUsuario(): void {
+    this.router.navigate(['/usuario-consultar']);
   }
 
 }
