@@ -8,10 +8,15 @@ import { HttpClient } from '@angular/common/http';
 })
 export class UsuarioService {
 
+
   constructor( private http: HttpClient) {}
 
   getUsuarios(): Observable<any> {
     return this.http.get('http://localhost:8080/pi/servicos/usuario/lista');
+  }
+
+  getUsuarioId(usuario: Usuario): Observable<any> {
+    return this.http.post('http://localhost:8080/pi/servicos/usuario/id', usuario);
   }
 
   inserirUsuario(usuario: Usuario): Observable<any> {
@@ -29,5 +34,7 @@ export class UsuarioService {
   signin(usuario: Usuario): Observable<any> {
     return this.http.post('http://localhost:8080/pi/servicos/usuario/signin', usuario);
   }
+
+
 }
 

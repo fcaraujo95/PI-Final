@@ -16,6 +16,7 @@ export class HomePageComponent {
 
   goToCadastroUsuario(): void {
     this.router.navigate(['/usuario-cadastrar'], {queryParams: new Usuario()});
+    // this.router.navigate(['/usuario-cadastrar'], {queryParams: new Usuario()});
     // this.router.navigate(['/usuario-cadastrar']);
   }
 

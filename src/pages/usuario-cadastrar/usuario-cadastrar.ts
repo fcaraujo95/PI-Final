@@ -28,12 +28,23 @@ export class UsuarioCadastrarComponent implements OnInit {
               private parametro: ActivatedRoute) { }
 
   ngOnInit() {
+
     this.getCidade();
+
     this.parametro.queryParams.subscribe(
-      (usuario: Usuario ) => {
-        this.usuario = usuario;
-        console.log(this.usuario);
-        console.log('Giovanni');
+      (usuario: Usuario) => {
+        console.log(JSON.stringify(usuario));
+        console.log('Parametro');
+        let user: Usuario = new Usuario();
+        user.id = usuario.id;
+        console.log(JSON.stringify(user));
+        this.usuarioService.getUsuarioId(user).subscribe(
+          (usuario: Usuario) =>{
+            this.usuario = usuario
+            console.log(this.usuario);
+            console.log('Giovanni');
+          }
+        );
       },
       (error) => {
         this.errMsg = JSON.stringify(error.message);

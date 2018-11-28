@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { UsuarioService } from 'src/services/usuario/usuario.service';
 
+
 @Component({
   // selector: 'usuario-consultar',
   templateUrl: './usuario-consultar.html',

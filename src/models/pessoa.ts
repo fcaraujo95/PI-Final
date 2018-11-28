@@ -30,6 +30,6 @@ export class Pessoa {
     this.contatos = [];
     this.dataDeNascimento = '';
     this.sexo = '';
-    //this.cidade = new Cidade();
+    this.cidade = new Cidade();
   }
 }
