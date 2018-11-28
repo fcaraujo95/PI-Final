@@ -23,8 +23,8 @@
   <div class="container3">
     <label class="label-form" class="label-form" maxlength="8"  for="usuario">CEP</label>
     <input type="text" class="input-form" name="cep" id="cep" [(ngModel)]="usuario.cep" placeholder="CEP">
-    <label class="label-form" class="label-form"for="usuario">Logadouro</label>
-    <input type="text" class="input-form" name="logadouro" id="logadouro" [(ngModel)]="usuario.logadouro" placeholder="Logadouro">
+    <label class="label-form" class="label-form"for="usuario">Logradouro</label>
+    <input type="text" class="input-form" name="logradouro" id="logradouro" [(ngModel)]="usuario.logradouro" placeholder="Logradouro">
     <label class="label-form" class="label-form"for="usuario">Numero</label>
     <input type="text" class="input-form" name="num" id="num" [(ngModel)]="usuario.numero" placeholder="numero"><br>
   </div>
@@ -43,7 +43,7 @@
     <input type="password" class="input-form" name="compl" id="pwd" [(ngModel)]="usuario.chave" placeholder="Password">
   </div>
 
-  <label class="label-form" class="label-form"for="usuario">Cidade </label>
+  <label class="label-form" class="label-form"for="usuario">Cidade:  </label>
   <select [(ngModel)]="usuario.cidade">
     <option *ngFor="let cidade of localizacao" [ngValue]="cidade">  {{cidade.cidade}}</option>
   </select>
