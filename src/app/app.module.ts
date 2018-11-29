@@ -18,6 +18,7 @@ import { VendaComponent } from '../pages/venda/venda';
 import { MenuComponent } from '../components/menu/menu';
 import { UsuarioCadastrarComponent } from '../pages/usuario-cadastrar/usuario-cadastrar';
 import { UsuarioConsultarComponent } from '../pages/usuario-consultar/usuario-consultar';
+import { ProdutoConsultarComponent } from '../pages/produto-consultar/produto-consultar';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MenuSimplesComponent } from '../components/menu-simples/menu-simples';
 
@@ -61,8 +62,11 @@ const appRoutes: Routes = [
   {
     path: 'usuario-consultar',
     component: UsuarioConsultarComponent
+  },
+  {
+    path: 'produto-consultar',
+    component: ProdutoConsultarComponent
   }
-
 
 ];
 
@@ -80,6 +84,7 @@ const appRoutes: Routes = [
     MenuComponent,
     UsuarioCadastrarComponent,
     UsuarioConsultarComponent,
+    ProdutoConsultarComponent,
     MenuSimplesComponent
   ],
   imports: [
@@ -97,7 +102,8 @@ const appRoutes: Routes = [
   ],
   entryComponents: [
     UsuarioCadastrarComponent,
-    UsuarioConsultarComponent
+    UsuarioConsultarComponent,
+    ProdutoConsultarComponent
   ],
   providers: [
     Http,

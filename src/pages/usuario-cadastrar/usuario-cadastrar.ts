@@ -40,7 +40,7 @@ export class UsuarioCadastrarComponent implements OnInit {
         console.log(JSON.stringify(user));
         this.usuarioService.getUsuarioId(user).subscribe(
           (usuario: Usuario) => {
-            this.usuario = usuario
+            this.usuario = usuario;
             console.log(this.usuario);
             console.log('Giovanni');
           }
