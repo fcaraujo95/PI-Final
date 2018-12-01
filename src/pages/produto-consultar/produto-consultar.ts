@@ -34,4 +34,23 @@ export class ProdutoConsultarComponent implements OnInit {
     goToCadastro(produto: Produto) {
 
     }
+
+    ativoInativo(produto: Produto) {
+        if (produto.inativo === 1) {
+            produto.inativo = 0;
+        } else {
+            produto.inativo = 1;
+        }
+
+        this.produtoService.ativoInativo(produto).subscribe(
+            (prod: Produto) => {
+                if (prod.id === 0) {
+                    alert('Não foi possivel inativar');
+                }
+                this.getProdutos();
+            }, (error) => {
+                console.log(JSON.stringify(error.message));
+              }
+        );
+      }
 }

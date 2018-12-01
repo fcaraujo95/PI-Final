@@ -148,6 +148,5 @@ export class UsuarioCadastrarComponent implements OnInit {
         // this.showAlert(this.errMsg);
       }
     );
-
   }
 }

@@ -6,7 +6,10 @@ import { Produto } from 'src/models/producao/produto';
 @Injectable({
   providedIn: 'root'
 })
+
 export class ProdutoService {
+
+  private produto: Produto;
 
   constructor( private http: HttpClient) {}
 
@@ -26,6 +29,17 @@ export class ProdutoService {
     return this.http.put('http://localhost:8080/pi/servicos/produto/alterar', produto);
   }
 
+  ativoInativo(produto: Produto): Observable<any> {
+    return this.http.put('http://localhost:8080/pi/servicos/produto/ativoInativo', produto);
+  }
+
+  getProdutoParam() {
+      return this.produto;
+  }
+
+  setProdutoParam(produto: Produto) {
+    this.produto = produto;
+  }
 
 }
 
