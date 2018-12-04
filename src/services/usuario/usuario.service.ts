@@ -8,6 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class UsuarioService {
 
+  private usuario: Usuario;
 
   constructor( private http: HttpClient) {}
 
@@ -35,6 +36,12 @@ export class UsuarioService {
     return this.http.post('http://localhost:8080/pi/servicos/usuario/signin', usuario);
   }
 
+  getUsuarioParam() {
+    return this.usuario;
+  }
 
+  setUsuarioParam(usuario: Usuario) {
+    this.usuario = usuario;
+  }
 }
 

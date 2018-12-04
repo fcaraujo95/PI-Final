@@ -35,6 +35,8 @@ export class UsuarioConsultarComponent implements OnInit {
   }
 
   goToCadastro(usuario: Usuario) {
-    this.router.navigate(['/usuario-cadastrar'], {queryParams: usuario});
+    this.usuarioService.setUsuarioParam(usuario);
+    this.router.navigate(['/usuario-cadastrar']);
+    // this.router.navigate(['/usuario-cadastrar'], {queryParams: usuario});
   }
 }
