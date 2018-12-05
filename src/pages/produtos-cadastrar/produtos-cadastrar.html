@@ -1,38 +1,41 @@
-<menu-simples-component voltarPara="home"></menu-simples-component>
+<menu-component menuAtivo="produto"></menu-component>
+<br>
+<br>
+<br>
 
 <h1 class="title-consulta">Cadastrar novo produto</h1>
 
 <div class="container">
   <div class="container1">
     <label class="label-form" class="label-form"for="product-name">Nome do produto: </label>
-    <input type="text" class="input-form" name="product-name" id="prod-name" [(ngModel)]="produto.nome" placeholder="Nome">
+    <input type="text" class="input-form" name="product-name" id="prod-name" [(ngModel)]="produto.nome" placeholder="nome">
     <label class="label-form" class="label-form"for="product-description">Descricao</label>
-    <input type="text" class="input-form" name="product-description" id="desc-prod" [(ngModel)]="produto.descricao" placeholder="descrição do produto">
+    <input type="text" class="input-form" name="product-description" id="desc-prod" maxlength="50" [(ngModel)]="produto.descricao" placeholder="descrição do produto">
     <label class="label-form" class="label-form"for="product-ean">CÓD. EAN</label>
-    <input type="text" class="input-form" name="product-ean" id="ean" [(ngModel)]="produto.ean" placeholder="Código de barras"><br>
+    <input type="text" class="input-form" name="product-ean" id="ean" [(ngModel)]="produto.ean" placeholder="código de barras"><br>
   </div>
 
   <div class="container2">
     <label class="label-form" class="label-form"for="product-marca">Marca</label>
-    <input type="text" class="input-form" name="product-marca" id="marca" [(ngModel)]="produto.marca">
+    <input type="text" class="input-form" name="product-marca" id="marca" [(ngModel)]="produto.marca" placeholder="marca">
     <label class="label-form" class="label-form"for="product-peso">Peso</label>
-    <input type="number" name="product-peso" [(ngModel)]="produto.peso">
+    <input type="number" class="input-form" name="product-peso" [(ngModel)]="produto.peso" placeholder="peso em cm">
   </div>
 
   <div class="container3">
     <label class="label-form" class="label-form"for="product-altura">Altura</label>
-    <input type="number" name="product-altura" [(ngModel)]="produto.altura">
+    <input type="number" class="input-form" name="product-altura" [(ngModel)]="produto.altura" placeholder="altura em cm">
     <label class="label-form" class="label-form"for="product-largura">Largura</label>
-    <input type="number" name="product-largura" [(ngModel)]="produto.largura">
+    <input type="number" class="input-form" name="product-largura" [(ngModel)]="produto.largura" placeholder="largura em cm">
     <label class="label-form" class="label-form"for="product-comprimnt">Comprimento</label>
-    <input type="number" name="product-comprimnt" [(ngModel)]="produto.comprimento">
+    <input type="number" class="input-form" name="product-comprimnt" [(ngModel)]="produto.comprimento" placeholder="comprimento em cm">
   </div>
 
   <div class="container4">
     <label class="label-form" class="label-form"for="gender">Preço do produto</label>
-    <input type="number" name="gender" [(ngModel)]="produto.preco">
+    <input type="number" name="gender" class="input-form" [(ngModel)]="preco.preco" placeholder="apenas numeros ex: 500">
     <label class="label-form" class="label-form"for="custo">Custo</label>
-    <input type="number" name="custo" [(ngModel)]="produto.custo">
+    <input type="number" name="custo" class="input-form" [(ngModel)]="custo.custo" placeholder="custo do produto">
   </div>
   <br>
 
