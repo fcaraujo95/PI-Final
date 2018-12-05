@@ -32,7 +32,8 @@ export class ProdutoConsultarComponent implements OnInit {
     }
 
     goToCadastro(produto: Produto) {
-
+        this.produtoService.setProdutoParam(produto);
+        this.router.navigate(['/produtos-cadastrar']);
     }
 
     ativoInativo(produto: Produto) {

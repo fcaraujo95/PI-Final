@@ -4,7 +4,7 @@ import { Usuario } from '../../models/usuario';
 import { Pessoa } from '../../models/pessoa';
 import { HttpClient } from '@angular/common/http';
 import { Cidade } from '../../models/cidade';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import { UsuarioService } from 'src/services/usuario/usuario.service';
 
 @Component({
@@ -24,8 +24,7 @@ export class UsuarioCadastrarComponent implements OnInit {
   constructor(public dialog: MatDialog,
               private _http: HttpClient,
               private router: Router,
-              private usuarioService: UsuarioService,
-              private parametro: ActivatedRoute) { }
+              private usuarioService: UsuarioService) { }
 
   ngOnInit() {
 
