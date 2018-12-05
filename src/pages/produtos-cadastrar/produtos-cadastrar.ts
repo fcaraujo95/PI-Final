@@ -24,33 +24,32 @@ export class ProdutosCadastrarComponent implements OnInit {
   constructor(public dialog: MatDialog,
               private _http: HttpClient,
               private router: Router,
-              private usuarioService: UsuarioService,
-              private parametro: ActivatedRoute) { }
+              private usuarioService: UsuarioService) { }
 
   ngOnInit() {
 
     // this.getCidade();
 
-    this.parametro.queryParams.subscribe(
-      (usuario: Usuario) => {
-        console.log(JSON.stringify(usuario));
-        console.log('Parametro');
-        let user: Usuario = new Usuario();
-        user.id = usuario.id;
-        console.log(JSON.stringify(user));
-        this.usuarioService.getUsuarioId(user).subscribe(
-          (usuario: Usuario) =>{
-            this.usuario = usuario
-            console.log(this.usuario);
-            console.log('Giovanni');
-          }
-        );
-      },
-      (error) => {
-        this.errMsg = JSON.stringify(error.message);
-        console.log('errooooo', error);
-      }
-      );
+    // this.parametro.queryParams.subscribe(
+    //   (usuario: Usuario) => {
+    //     console.log(JSON.stringify(usuario));
+    //     console.log('Parametro');
+    //     let user: Usuario = new Usuario();
+    //     user.id = usuario.id;
+    //     console.log(JSON.stringify(user));
+    //     this.usuarioService.getUsuarioId(user).subscribe(
+    //       (usuario: Usuario) =>{
+    //         this.usuario = usuario
+    //         console.log(this.usuario);
+    //         console.log('Giovanni');
+    //       }
+    //     );
+    //   },
+    //   (error) => {
+    //     this.errMsg = JSON.stringify(error.message);
+    //     console.log('errooooo', error);
+    //   }
+    //   );
   }
 
   openDialog(): void {
