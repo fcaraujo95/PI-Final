@@ -21,6 +21,7 @@ import { UsuarioConsultarComponent } from '../pages/usuario-consultar/usuario-co
 import { ProdutoConsultarComponent } from '../pages/produto-consultar/produto-consultar';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MenuSimplesComponent } from '../components/menu-simples/menu-simples';
+import { ProdutosCadastrarComponent } from '../pages/produtos-cadastrar/produtos-cadastrar';
 
 const appRoutes: Routes = [
   { path: '',
@@ -64,9 +65,15 @@ const appRoutes: Routes = [
     component: UsuarioConsultarComponent
   },
   {
+    path: 'produtos-cadastrar',
+    component: ProdutosCadastrarComponent
+  },
+  {
     path: 'produto-consultar',
     component: ProdutoConsultarComponent
   }
+
+
 
 ];
 
@@ -84,6 +91,8 @@ const appRoutes: Routes = [
     MenuComponent,
     UsuarioCadastrarComponent,
     UsuarioConsultarComponent,
+    MenuSimplesComponent,
+    ProdutosCadastrarComponent
     ProdutoConsultarComponent,
     MenuSimplesComponent
   ],
