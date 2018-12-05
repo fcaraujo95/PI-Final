@@ -14,6 +14,6 @@ export class Produto {
   comprimento: number;
   precos: Array<Preco>;
   custos: Array<Custo>;
-  estoque: Array<Estoque>
+  estoque: Array<Estoque>;
   inativo: number;
 }

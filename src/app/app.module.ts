@@ -92,7 +92,7 @@ const appRoutes: Routes = [
     UsuarioCadastrarComponent,
     UsuarioConsultarComponent,
     MenuSimplesComponent,
-    ProdutosCadastrarComponent
+    ProdutosCadastrarComponent,
     ProdutoConsultarComponent,
     MenuSimplesComponent
   ],
