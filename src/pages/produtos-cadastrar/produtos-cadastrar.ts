@@ -17,7 +17,6 @@ import { Preco } from '../../models/producao/preco';
 export class ProdutosCadastrarComponent implements OnInit {
   // title = 'PI-Final';
   errMsg: string;
-  localizacao: Cidade[] = [];
 
   public produto: Produto;
 
