@@ -12,13 +12,13 @@ export class Produto {
     public altura: number;
     public largura: number;
     public comprimento: number;
-    public preco: Preco[];
-    public custo: Custo[];
-    public estoque: Estoque[];
+    public preco: Preco;
+    public custo: Custo;
+    public estoque: Estoque;
     public inativo: number;
 
     constructor() {
-      this.preco = new Array<Preco>();
-      this.custo = new Array<Custo>();
+      this.preco = new Preco();
+      this.custo = new Custo();
     }
 }

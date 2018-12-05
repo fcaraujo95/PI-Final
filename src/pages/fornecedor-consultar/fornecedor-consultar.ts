@@ -27,6 +27,7 @@ export class FornecedorConsultarComponent implements OnInit {
         this.fornecedorService.getFornecedores().subscribe(
             (fornecedores: Fornecedor[]) => {
                 this.fornecedores = fornecedores;
+                console.log(JSON.stringify(this.fornecedores));
             }
         );
     }

@@ -27,9 +27,9 @@
           <td>{{produto.nome}}</td>
           <td>{{produto.descricao}}</td>
           <td>{{produto.ean}}</td>
-          <td *ngFor="let estoque of produto.estoques" >{{estoque.quantidade}}</td>
-          <td *ngFor="let custo of produto.custos" >{{custo.custo}}</td>
-          <td *ngFor="let preco of produto.precos" >{{preco.preco}}</td>
+          <td>{{produto.estoque.quantidade}}</td>
+          <td>{{produto.custo.custo}}</td>
+          <td>{{produto.preco.preco}}</td>
           <td>
             <div class="btn-group btn-group-xs" role="group" aria-label="...">
               <div class="btn-group" role="group">

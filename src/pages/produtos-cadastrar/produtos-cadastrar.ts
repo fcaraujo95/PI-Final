@@ -1,11 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material';
-import { Usuario } from '../../models/usuario';
-import { Pessoa } from '../../models/pessoa';
 import { HttpClient } from '@angular/common/http';
 import { Cidade } from '../../models/cidade';
 import { Router, ActivatedRoute } from '@angular/router';
-import { UsuarioService } from 'src/services/usuario/usuario.service';
+import { ProdutoService } from 'src/services/produto/produto.service';
 import { Produto } from '../../models/producao/produto';
 import { Custo } from '../../models/producao/custo';
 import { Preco } from '../../models/producao/preco';
@@ -21,28 +19,22 @@ export class ProdutosCadastrarComponent implements OnInit {
   errMsg: string;
   localizacao: Cidade[] = [];
 
-  public produto: Produto = new Produto();
-  public custo: Custo = new Custo();
-  public preco: Preco = new Preco();
-  // public pessoa: Pessoa = new Usuario();
+  public produto: Produto;
 
   constructor(public dialog: MatDialog,
               private _http: HttpClient,
               private router: Router,
-              private usuarioService: UsuarioService) { }
+              private produtoService: ProdutoService) { }
 
   ngOnInit() {
-
+    this.produto = this.produtoService.getProdutoParam();
+    console.log(JSON.stringify(this.produto));
   }
 
   openDialog(): void {
   }
 
   public cadastrar(): void {
-    this.produto.custo = new Array<Custo>();
-    this.produto.custo.push(this.custo);
-    this.produto.preco = new Array<Preco>();
-    this.produto.preco.push(this.preco);
     console.log(JSON.stringify(this.produto));
         this._http.post('http://localhost:8080/pi/servicos/produto/inserir', this.produto)
         .subscribe(
@@ -85,22 +77,4 @@ export class ProdutosCadastrarComponent implements OnInit {
   //             );
   // }
 
-  getCidade() {
-    this._http.get('http://localhost:8080/pi/servicos/cidade/lista')
-    .subscribe(
-      (cidade: Cidade[]) => {
-        console.log('Cidade! ', cidade);
-        this.localizacao = cidade;
-        console.log(this.localizacao);
-      },
-      (error) => {
-        this.errMsg = JSON.stringify(error.message);
-        console.log('errooooo', error);
-        // this.router.navigate(['/home-page']);
-        // loading.dismiss();
-        // this.showAlert(this.errMsg);
-      }
-    );
-
   }
-}
