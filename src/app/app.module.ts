@@ -69,7 +69,7 @@ const appRoutes: Routes = [
     component: ProdutosCadastrarComponent
   },
   {
-    path: 'produto-consultar',
+    path: 'produtos-consultar',
     component: ProdutoConsultarComponent
   }
 
