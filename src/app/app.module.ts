@@ -20,6 +20,7 @@ import { UsuarioCadastrarComponent } from '../pages/usuario-cadastrar/usuario-ca
 import { UsuarioConsultarComponent } from '../pages/usuario-consultar/usuario-consultar';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MenuSimplesComponent } from '../components/menu-simples/menu-simples';
+import { ProdutosCadastrarComponent } from '../pages/produtos-cadastrar/produtos-cadastrar';
 
 const appRoutes: Routes = [
   { path: '',
@@ -61,9 +62,11 @@ const appRoutes: Routes = [
   {
     path: 'usuario-consultar',
     component: UsuarioConsultarComponent
+  },
+  {
+    path: 'produtos-cadastrar',
+    component: ProdutosCadastrarComponent
   }
-
-
 ];
 
 @NgModule({
@@ -80,7 +83,8 @@ const appRoutes: Routes = [
     MenuComponent,
     UsuarioCadastrarComponent,
     UsuarioConsultarComponent,
-    MenuSimplesComponent
+    MenuSimplesComponent,
+    ProdutosCadastrarComponent
   ],
   imports: [
     BrowserModule,
