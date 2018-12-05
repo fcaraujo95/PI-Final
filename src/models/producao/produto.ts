@@ -5,7 +5,7 @@ import { Preco } from './preco';
 export class Produto {
     public id: number;
     public nome: string;
-    public decricao: string;
+    public descricao: string;
     public ean: string;
     public marca: string;
     public peso: number;

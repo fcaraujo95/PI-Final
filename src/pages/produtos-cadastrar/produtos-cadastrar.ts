@@ -6,6 +6,7 @@ import { HttpClient } from '@angular/common/http';
 import { Cidade } from '../../models/cidade';
 import { Router, ActivatedRoute } from '@angular/router';
 import { UsuarioService } from 'src/services/usuario/usuario.service';
+import { Produto } from '../../models/producao/produto';
 
 @Component({
   selector: 'produtos-cadastrar',
@@ -18,7 +19,7 @@ export class ProdutosCadastrarComponent implements OnInit {
   errMsg: string;
   localizacao: Cidade[] = [];
 
-  public usuario: Usuario = new Usuario();
+  public produto: Produto = new Produto();
   // public pessoa: Pessoa = new Usuario();
 
   constructor(public dialog: MatDialog,
@@ -58,34 +59,34 @@ export class ProdutosCadastrarComponent implements OnInit {
   cadastrar(): void {
     // this.usuario.dataDeNascimento = this.usuario.dataDeNascimento.replace("-", "");
 
-    console.log(JSON.stringify(this.usuario));
-    if (this.usuario.id > 0) {
-      console.log('Alterar');
-      this.usuarioService.alterarUsuario(this.usuario).subscribe(
-        (usuario: Usuario) => {
-          console.log(usuario);
-          if (usuario.id > 0) {
-            alert('Alterado com sucesso');
-            this.router.navigate(['/home-page']);
-          }
-        }
-      );
-    } else {
-      console.log(this.usuario.cidade);
-      this.usuarioService.getUsuarioCpf(this.usuario)
-              .subscribe(
-                (usuario: Usuario) => {
-                  console.log('Return value of consultaUsuario ');
-                  if (usuario.id > 0) {
-                    alert('JÁ EXISTE');
-                    console.log('Usuario existe');
-                    return false;
-                  } else {
-                    this.consultaPessoa(this.usuario);
-                  }
-                }
-              );
-    }
+    // console.log(JSON.stringify(this.usuario));
+    // if (this.usuario.id > 0) {
+    //   console.log('Alterar');
+    //   this.usuarioService.alterarUsuario(this.usuario).subscribe(
+    //     (usuario: Usuario) => {
+    //       console.log(usuario);
+    //       if (usuario.id > 0) {
+    //         alert('Alterado com sucesso');
+    //         this.router.navigate(['/home-page']);
+    //       }
+    //     }
+    //   );
+    // } else {
+    //   console.log(this.usuario.cidade);
+    //   this.usuarioService.getUsuarioCpf(this.usuario)
+    //           .subscribe(
+    //             (usuario: Usuario) => {
+    //               console.log('Return value of consultaUsuario ');
+    //               if (usuario.id > 0) {
+    //                 alert('JÁ EXISTE');
+    //                 console.log('Usuario existe');
+    //                 return false;
+    //               } else {
+    //                 this.consultaPessoa(this.usuario);
+    //               }
+    //             }
+    //           );
+    // }
   }
 
   public inserirUsuario(usuario: Usuario): void {
@@ -105,31 +106,31 @@ export class ProdutosCadastrarComponent implements OnInit {
         );
   }
 
-  public consultaPessoa(usuario: Pessoa): void {
-    this._http.post('http://localhost:8080/pi/servicos/pessoa/cpf', usuario)
-              .subscribe(
-                (p: Pessoa) => {
-                  console.log('RETORNO => ' , p);
-                  console.log('RETORNO => ' , this.usuario);
-                  this.usuario.idPessoa = p.idPessoa;
-                  console.log(JSON.stringify(this.usuario));
-                  this.usuarioService.inserirUsuario(this.usuario)
-                  .subscribe(
-                    (user: Usuario) => {
-                          if (user.id > 0) {
-                            console.log('Cadastrado');
-                            alert('Cadastrado com sucesso');
-                            this.router.navigate(['/home-page']);
-                          } else {
-                            console.log('Erro');
-                          }
-                        }
-                  );
-                  }, (error) => {
-                    console.log(error);
-                  }
-              );
-  }
+  // public consultaPessoa(usuario: Pessoa): void {
+  //   this._http.post('http://localhost:8080/pi/servicos/pessoa/cpf', usuario)
+  //             .subscribe(
+  //               (p: Pessoa) => {
+  //                 console.log('RETORNO => ' , p);
+  //                 console.log('RETORNO => ' , this.usuario);
+  //                 this.usuario.idPessoa = p.idPessoa;
+  //                 console.log(JSON.stringify(this.usuario));
+  //                 this.usuarioService.inserirUsuario(this.usuario)
+  //                 .subscribe(
+  //                   (user: Usuario) => {
+  //                         if (user.id > 0) {
+  //                           console.log('Cadastrado');
+  //                           alert('Cadastrado com sucesso');
+  //                           this.router.navigate(['/home-page']);
+  //                         } else {
+  //                           console.log('Erro');
+  //                         }
+  //                       }
+  //                 );
+  //                 }, (error) => {
+  //                   console.log(error);
+  //                 }
+  //             );
+  // }
 
   getCidade() {
     this._http.get('http://localhost:8080/pi/servicos/cidade/lista')

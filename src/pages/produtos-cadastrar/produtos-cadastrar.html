@@ -4,49 +4,36 @@
 
 <div class="container">
   <div class="container1">
-    <label class="label-form" class="label-form"for="usuario">Nome do produto: </label>
-    <input type="text" class="input-form" name="firstname" id="usuario" [(ngModel)]="usuario.nome" placeholder="Nome">
-    <label class="label-form" class="label-form"for="usuario">Descricao</label>
-    <input type="text" class="input-form" name="sobrenome" id="sobrenome" [(ngModel)]="usuario.sobrenome" placeholder="descrição do produto">
-    <label class="label-form" class="label-form"for="usuario">CÓD. EAN</label>
-    <input type="text" class="input-form" name="cpf" id="cpf" [(ngModel)]="usuario.cpf" placeholder="Código de barras"><br>
+    <label class="label-form" class="label-form"for="product-name">Nome do produto: </label>
+    <input type="text" class="input-form" name="product-name" id="prod-name" [(ngModel)]="produto.nome" placeholder="Nome">
+    <label class="label-form" class="label-form"for="product-description">Descricao</label>
+    <input type="text" class="input-form" name="product-description" id="desc-prod" [(ngModel)]="produto.descricao" placeholder="descrição do produto">
+    <label class="label-form" class="label-form"for="product-ean">CÓD. EAN</label>
+    <input type="text" class="input-form" name="product-ean" id="ean" [(ngModel)]="produto.ean" placeholder="Código de barras"><br>
   </div>
 
   <div class="container2">
-    <label class="label-form" class="label-form"for="usuario">Marca</label>
-    <input type="date" class="input-form" name="data" id="data" [(ngModel)]="usuario.dataDeNascimento" placeholder="Data Nascimento">
-    <label class="label-form" class="label-form"for="usuario">Sexo</label>
-    <input type="radio" name="gender" [(ngModel)]="usuario.sexo" value="M">Masculino
-    <input type="radio" name="gender" [(ngModel)]="usuario.sexo" value="F">Feminino<br>
+    <label class="label-form" class="label-form"for="product-marca">Marca</label>
+    <input type="text" class="input-form" name="product-marca" id="marca" [(ngModel)]="produto.marca">
+    <label class="label-form" class="label-form"for="product-peso">Peso</label>
+    <input type="number" name="product-peso" [(ngModel)]="produto.peso">
   </div>
 
   <div class="container3">
-    <label class="label-form" class="label-form" maxlength="8"  for="usuario">CEP</label>
-    <input type="text" class="input-form" name="cep" id="cep" [(ngModel)]="usuario.cep" placeholder="CEP">
-    <label class="label-form" class="label-form"for="usuario">Logadouro</label>
-    <input type="text" class="input-form" name="logadouro" id="logadouro" [(ngModel)]="usuario.logadouro" placeholder="Logadouro">
-    <label class="label-form" class="label-form"for="usuario">Numero</label>
-    <input type="text" class="input-form" name="num" id="num" [(ngModel)]="usuario.numero" placeholder="numero"><br>
+    <label class="label-form" class="label-form"for="product-altura">Altura</label>
+    <input type="number" name="product-altura" [(ngModel)]="produto.altura">
+    <label class="label-form" class="label-form"for="product-largura">Largura</label>
+    <input type="number" name="product-largura" [(ngModel)]="produto.largura">
+    <label class="label-form" class="label-form"for="product-comprimnt">Comprimento</label>
+    <input type="number" name="product-comprimnt" [(ngModel)]="produto.comprimento">
   </div>
 
   <div class="container4">
-    <label class="label-form" class="label-form"for="usuario">Complemento</label>
-    <input type="text" class="input-form" name="compl" id="compl" [(ngModel)]="usuario.complemento" placeholder="Complemento">
-    <label class="label-form" class="label-form"for="usuario">Bairro</label>
-    <input type="text" class="input-form" name="bairro" id="bairro" [(ngModel)]="usuario.bairro" placeholder="Bairro"><br>
+    <label class="label-form" class="label-form"for="gender">Preço do produto</label>
+    <input type="number" name="gender" [(ngModel)]="produto.preco">
+    <label class="label-form" class="label-form"for="custo">Custo</label>
+    <input type="number" name="custo" [(ngModel)]="produto.custo">
   </div>
-
-  <div class="container5">
-    <label class="label-form" class="label-form"for="usuario">Usuario</label>
-    <input type="text" class="input-form" name="compl" id="usrnm" [(ngModel)]="usuario.login" placeholder="Username">
-    <label class="label-form" class="label-form"for="usuario">Senha</label>
-    <input type="password" class="input-form" name="compl" id="pwd" [(ngModel)]="usuario.chave" placeholder="Password">
-  </div>
-
-  <label class="label-form" class="label-form"for="usuario">Cidade </label>
-  <select [(ngModel)]="usuario.cidade">
-    <option *ngFor="let cidade of localizacao" [ngValue]="cidade">  {{cidade.cidade}}</option>
-  </select>
   <br>
 
   <button type="button" class="botao-form" (click)="cadastrar()">Cadastrar</button>
