@@ -16,4 +16,9 @@ export class Produto {
     public custo: Custo[];
     public estoque: Estoque[];
     public inativo: number;
+
+    constructor() {
+      this.preco = new Array<Preco>();
+      this.custo = new Array<Custo>();
+    }
 }

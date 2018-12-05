@@ -7,6 +7,8 @@ import { Cidade } from '../../models/cidade';
 import { Router, ActivatedRoute } from '@angular/router';
 import { UsuarioService } from 'src/services/usuario/usuario.service';
 import { Produto } from '../../models/producao/produto';
+import { Custo } from '../../models/producao/custo';
+import { Preco } from '../../models/producao/preco';
 
 @Component({
   selector: 'produtos-cadastrar',
@@ -20,6 +22,8 @@ export class ProdutosCadastrarComponent implements OnInit {
   localizacao: Cidade[] = [];
 
   public produto: Produto = new Produto();
+  public custo: Custo = new Custo();
+  public preco: Preco = new Preco();
   // public pessoa: Pessoa = new Usuario();
 
   constructor(public dialog: MatDialog,
@@ -29,79 +33,28 @@ export class ProdutosCadastrarComponent implements OnInit {
 
   ngOnInit() {
 
-    // this.getCidade();
-
-    // this.parametro.queryParams.subscribe(
-    //   (usuario: Usuario) => {
-    //     console.log(JSON.stringify(usuario));
-    //     console.log('Parametro');
-    //     let user: Usuario = new Usuario();
-    //     user.id = usuario.id;
-    //     console.log(JSON.stringify(user));
-    //     this.usuarioService.getUsuarioId(user).subscribe(
-    //       (usuario: Usuario) =>{
-    //         this.usuario = usuario
-    //         console.log(this.usuario);
-    //         console.log('Giovanni');
-    //       }
-    //     );
-    //   },
-    //   (error) => {
-    //     this.errMsg = JSON.stringify(error.message);
-    //     console.log('errooooo', error);
-    //   }
-    //   );
   }
 
   openDialog(): void {
   }
 
-  cadastrar(): void {
-    // this.usuario.dataDeNascimento = this.usuario.dataDeNascimento.replace("-", "");
-
-    // console.log(JSON.stringify(this.usuario));
-    // if (this.usuario.id > 0) {
-    //   console.log('Alterar');
-    //   this.usuarioService.alterarUsuario(this.usuario).subscribe(
-    //     (usuario: Usuario) => {
-    //       console.log(usuario);
-    //       if (usuario.id > 0) {
-    //         alert('Alterado com sucesso');
-    //         this.router.navigate(['/home-page']);
-    //       }
-    //     }
-    //   );
-    // } else {
-    //   console.log(this.usuario.cidade);
-    //   this.usuarioService.getUsuarioCpf(this.usuario)
-    //           .subscribe(
-    //             (usuario: Usuario) => {
-    //               console.log('Return value of consultaUsuario ');
-    //               if (usuario.id > 0) {
-    //                 alert('JÁ EXISTE');
-    //                 console.log('Usuario existe');
-    //                 return false;
-    //               } else {
-    //                 this.consultaPessoa(this.usuario);
-    //               }
-    //             }
-    //           );
-    // }
-  }
-
-  public inserirUsuario(usuario: Usuario): void {
-        this._http.post('http://localhost:8080/pi/servicos/usuario/inserir', usuario)
+  public cadastrar(): void {
+    this.produto.custo = new Array<Custo>();
+    this.produto.custo.push(this.custo);
+    this.produto.preco = new Array<Preco>();
+    this.produto.preco.push(this.preco);
+    console.log(JSON.stringify(this.produto));
+        this._http.post('http://localhost:8080/pi/servicos/produto/inserir', this.produto)
         .subscribe(
-          (user: Usuario) => {
-            if (user.id > 0) {
-              console.log('Cadastrado');
-              this.router.navigate(['/home-page']);
-            } else {
-              console.log('Erro');
-            }
+          (produto: Produto) => {
+            console.info('Produto retornado => ', produto);
+            alert('Produto cadastrado com sucesso!');
+            this.produto = new Produto();
           },
           (error) => {
             this.errMsg = JSON.stringify(error.message);
+            alert('Usuário não cadastrado');
+            this.produto = new Produto();
           }
         );
   }
