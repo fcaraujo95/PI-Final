@@ -39,8 +39,8 @@ export class UsuarioCadastrarComponent implements OnInit {
         user.id = usuario.id;
         console.log(JSON.stringify(user));
         this.usuarioService.getUsuarioId(user).subscribe(
-          (usuario: Usuario) =>{
-            this.usuario = usuario
+          (usuario: Usuario) => {
+            this.usuario = usuario;
             console.log(this.usuario);
             console.log('Giovanni');
           }
@@ -148,6 +148,5 @@ export class UsuarioCadastrarComponent implements OnInit {
         // this.showAlert(this.errMsg);
       }
     );
-
   }
 }

@@ -18,6 +18,7 @@ import { VendaComponent } from '../pages/venda/venda';
 import { MenuComponent } from '../components/menu/menu';
 import { UsuarioCadastrarComponent } from '../pages/usuario-cadastrar/usuario-cadastrar';
 import { UsuarioConsultarComponent } from '../pages/usuario-consultar/usuario-consultar';
+import { ProdutoConsultarComponent } from '../pages/produto-consultar/produto-consultar';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MenuSimplesComponent } from '../components/menu-simples/menu-simples';
 import { ProdutosCadastrarComponent } from '../pages/produtos-cadastrar/produtos-cadastrar';
@@ -66,7 +67,14 @@ const appRoutes: Routes = [
   {
     path: 'produtos-cadastrar',
     component: ProdutosCadastrarComponent
+  },
+  {
+    path: 'produto-consultar',
+    component: ProdutoConsultarComponent
   }
+
+
+
 ];
 
 @NgModule({
@@ -85,6 +93,8 @@ const appRoutes: Routes = [
     UsuarioConsultarComponent,
     MenuSimplesComponent,
     ProdutosCadastrarComponent
+    ProdutoConsultarComponent,
+    MenuSimplesComponent
   ],
   imports: [
     BrowserModule,
@@ -101,7 +111,8 @@ const appRoutes: Routes = [
   ],
   entryComponents: [
     UsuarioCadastrarComponent,
-    UsuarioConsultarComponent
+    UsuarioConsultarComponent,
+    ProdutoConsultarComponent
   ],
   providers: [
     Http,

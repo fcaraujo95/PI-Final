@@ -1,0 +1,54 @@
+<menu-component menuAtivo="home"></menu-component>
+<br>
+<br>
+<br>
+
+<div class="container">
+  <div class="jumbotron">
+    <h1>Consulta de Produto</h1>
+  </div>
+</div>
+
+<body>
+  <div class="table-responsive">
+    <table class="table table-bordered">
+      <ul>
+        <tr>
+          <th>id</th>
+          <th>Nome</th>
+          <th>Descricao</th>
+          <th>ean</th>
+          <th>estoque</th>
+          <th>custo</th>
+          <th>preço</th>
+        </tr>
+        <tr *ngFor="let produto of produtos">
+          <td>{{produto.id}}</td>
+          <td>{{produto.nome}}</td>
+          <td>{{produto.descricao}}</td>
+          <td>{{produto.ean}}</td>
+          <td *ngFor="let estoque of produto.estoques" >{{estoque.quantidade}}</td>
+          <td *ngFor="let custo of produto.custos" >{{custo.custo}}</td>
+          <td *ngFor="let preco of produto.precos" >{{preco.preco}}</td>
+          <td>
+            <div class="btn-group btn-group-xs" role="group" aria-label="...">
+              <div class="btn-group" role="group">
+                <button type="button" class="btn btn-success btn-xs" (click)="goToCadastro(produto)">Alterar</button>
+              </div>
+              <div *ngIf="produto.inativo == 0">
+                <div class="btn-group" role="group">
+                  <button type="button" class="btn btn-danger btn-xs" (click)="ativoInativo(produto)"> Inativar</button>
+                </div>
+              </div>
+              <div *ngIf="produto.inativo == 1">
+                <div class="btn-group" role="group">
+                  <button type="button" class="btn btn-warning btn-xs" (click)="ativoInativo(produto)"> Ativar</button>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </ul>
+    </table>
+  </div>
+</body>

@@ -7,7 +7,7 @@ import { UsuarioService } from 'src/services/usuario/usuario.service';
 
 
 @Component({
-  // selector: 'usuario-consultar',
+  selector: 'usuario-consultar',
   templateUrl: './usuario-consultar.html',
   styleUrls: ['./usuario-consultar.scss']
 })
