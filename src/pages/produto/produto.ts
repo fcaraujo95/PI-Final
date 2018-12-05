@@ -22,4 +22,8 @@ export class ProdutoComponent {
     this.produtoService.setProdutoParam(new Produto());
     this.router.navigate(['/produtos-cadastrar']);
   }
+
+  public goToConsultarProduto(): void {
+    this.router.navigate(['/produtos-consultar']);
+  }
 }
