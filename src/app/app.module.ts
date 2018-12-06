@@ -23,6 +23,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MenuSimplesComponent } from '../components/menu-simples/menu-simples';
 import { ProdutosCadastrarComponent } from '../pages/produtos-cadastrar/produtos-cadastrar';
 import { FornecedorConsultarComponent } from '../pages/fornecedor-consultar/fornecedor-consultar';
+import { EstoqueCadastrarComponent } from '../pages/estoque-cadastrar/estoque-cadastrar';
 
 const appRoutes: Routes = [
   { path: '',
@@ -76,6 +77,10 @@ const appRoutes: Routes = [
   {
     path: 'fornecedor-consultar',
     component: FornecedorConsultarComponent
+  },
+  {
+    path: 'estoque-cadastrar',
+    component: EstoqueCadastrarComponent
   }
 
 
@@ -100,6 +105,7 @@ const appRoutes: Routes = [
     ProdutosCadastrarComponent,
     ProdutoConsultarComponent,
     FornecedorConsultarComponent,
+    EstoqueCadastrarComponent,
     MenuSimplesComponent
   ],
   imports: [
@@ -117,9 +123,7 @@ const appRoutes: Routes = [
   ],
   entryComponents: [
     UsuarioCadastrarComponent,
-    UsuarioConsultarComponent,
-    ProdutoConsultarComponent,
-    FornecedorConsultarComponent
+    UsuarioConsultarComponent
   ],
   providers: [
     Http,
