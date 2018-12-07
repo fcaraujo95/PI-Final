@@ -37,7 +37,7 @@ export class CompradorCadastrarComponent implements OnInit {
             (comprador: Comprador) => {
               if (comprador.id > 0) {
                 alert('Comprador alterado com sucesso');
-                this.router.navigate(['/comprador-page']);
+                this.comprador = new Comprador();
               }
             }
           );
@@ -46,7 +46,7 @@ export class CompradorCadastrarComponent implements OnInit {
               (comprador: Comprador) => {
                 if (comprador.id > 0) {
                   alert('Comprador cadastrado com sucesso!');
-                  this.router.navigate(['/comprador-page']);
+                  this.comprador = new Comprador();
                 } else {
                   console.log('Erro');
                 }

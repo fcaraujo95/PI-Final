@@ -31,6 +31,7 @@ export class UsuarioCadastrarComponent implements OnInit {
     this.getCidade();
 
     this.usuario = this.usuarioService.getUsuarioParam();
+    this.usuario.chave = '';
     console.log(JSON.stringify(this.usuario));
 
     // this.parametro.queryParams.subscribe(

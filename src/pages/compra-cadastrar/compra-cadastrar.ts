@@ -128,21 +128,38 @@ export class CompraCadastrarComponent implements OnInit {
             alert('Atenção... Favor informar pelo menos um produto!');
             return false;
         }
-
-        this.compraService.inserirCompra(compra).subscribe(
-            (com: Compra) => {
-                if (com.id > 0) {
-                    alert('Pedido de compra salvo com sucesso!');
-                    this.router.navigate(['/compra-page']);
-                } else {
-                    alert('Não foi possivel salvar, acione o suporte tecnico!');
-                    this.router.navigate(['/compra-page']);
+        if (compra.id > 0) {
+            this.compraService.alterarCompra(compra).subscribe(
+                (com: Compra) => {
+                    if (com.id > 0) {
+                        alert('Pedido de compra alterado com sucesso!');
+                        this.compra = new Compra();
+                        this.compraItem = new CompraItem();
+                    } else {
+                        alert('Não foi possivel alterar, acione o suporte tecnico!');
+                        this.router.navigate(['/compra-page']);
+                    }
+                },
+                (error) => {
+                    alert(error.message);
                 }
-            },
-            (error) => {
-                alert(error.message);
-            }
-        );
-
+            );
+        } else {
+            this.compraService.inserirCompra(compra).subscribe(
+                (com: Compra) => {
+                    if (com.id > 0) {
+                        alert('Pedido de compra salvo com sucesso!');
+                        this.compra = new Compra();
+                        this.compraItem = new CompraItem();
+                    } else {
+                        alert('Não foi possivel salvar, acione o suporte tecnico!');
+                        this.router.navigate(['/compra-page']);
+                    }
+                },
+                (error) => {
+                    alert(error.message);
+                }
+            );
+        }
     }
 }

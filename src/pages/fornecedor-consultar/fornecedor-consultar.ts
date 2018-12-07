@@ -37,7 +37,7 @@ export class FornecedorConsultarComponent implements OnInit {
 
     goToCadastro(fornecedor: Fornecedor) {
         this.fornecedorService.setFornecedorParam(fornecedor);
-        // this.router.navigate(['/fornecedor-cadastrar']);
+        this.router.navigate(['/fornecedor-cadastrar']);
     }
 
     goToRetorno(fornecedor: Fornecedor) {

@@ -71,14 +71,16 @@ export class EstoqueCadastrarComponent implements OnInit {
             (est: Estoque) => {
                 if (est.id > 0) {
                     alert('Ajuste de estoque salvo com sucesso!');
+                    this.produto = new Produto();
+                    this.estoque = new Estoque();
                 } else {
-                    alert('Ocorreu algum erro, favor contacter o suporte tecnico!');
+                    alert('Ocorreu algum erro, favor contactar o suporte tecnico!');
                 }
             }, (error) => {
                 console.log(error.message);
             }
         );
-        console.log(JSON.stringify(estoque));
+    console.log(JSON.stringify(estoque));
     }
 
 }
