@@ -6,13 +6,14 @@ import { Router, Route } from '@angular/router';
   templateUrl: './menu-simples.html',
   styleUrls: ['./menu-simples.scss']
 })
-export class MenuSimplesComponent implements OnInit{
+export class MenuSimplesComponent implements OnInit {
   // title = 'PI-Final';
   menuAtivoNome: string;
   elementEmpresa: any = '';
   elementProduto: any = '';
   elementEstoque: any = '';
   elementFornecedor: any = '';
+  elementComprador: any = '';
   elementCompra: any = '';
   elementCliente: any = '';
   elementVenda: any = '';
@@ -21,7 +22,7 @@ export class MenuSimplesComponent implements OnInit{
 
   constructor(private router: Router) {}
 
-  @Input() voltarPara : string;
+  @Input() voltarPara: string;
 
   ngOnInit() { }
 

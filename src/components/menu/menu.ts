@@ -12,6 +12,7 @@ export class MenuComponent implements OnInit{
   elementEmpresa: any = '';
   elementProduto: any = '';
   elementEstoque: any = '';
+  elementComprador: any = '';
   elementFornecedor: any = '';
   elementCompra: any = '';
   elementCliente: any = '';
@@ -34,35 +35,40 @@ export class MenuComponent implements OnInit{
     this.elementCompra = document.getElementById('compra');
     this.elementCliente = document.getElementById('cliente');
     this.elementVenda = document.getElementById('venda');
+    this.elementComprador = document.getElementById('comprador');
 
-    switch(this.menuAtivo){
+    switch (this.menuAtivo) {
 
-      case "home":
+      case 'home':
         console.log('entrei');
         document.getElementById('empresa').classList.add('active');
         break;
 
-      case "produto":
+      case 'produto':
         document.getElementById('produtos').classList.add('active');
         break;
 
-      case "estoque":
+      case 'estoque':
         document.getElementById('estoque').classList.add('active');
         break;
 
-      case "fornecedor":
+      case 'fornecedor':
         document.getElementById('fornecedor').classList.add('active');
         break;
 
-      case "compra":
+      case 'comprador':
+        document.getElementById('comprador').classList.add('active');
+        break;
+
+      case 'compra':
         document.getElementById('compra').classList.add('active');
         break;
 
-      case "cliente":
+      case 'cliente':
         document.getElementById('cliente').classList.add('active');
         break;
 
-      case "venda":
+      case 'venda':
         document.getElementById('venda').classList.add('active');
         break;
     }

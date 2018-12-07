@@ -37,7 +37,7 @@ export class CompradorConsultarComponent implements OnInit {
 
     goToCadastro(comprador: Comprador) {
         this.compradorService.setCompradorParam(comprador);
-        // this.router.navigate(['/comprador-cadastrar']);
+        this.router.navigate(['/comprador-cadastrar']);
     }
 
     goToRetorno(comprador: Comprador) {

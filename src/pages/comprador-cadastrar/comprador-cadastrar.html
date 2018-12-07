@@ -1,4 +1,4 @@
-<menu-component menuAtivo="home"></menu-component>
+<menu-component menuAtivo="comprador"></menu-component>
 <br>
 <br>
 <br>
@@ -46,7 +46,7 @@
   <br>
 
   <label class="label-form" class="label-form"for="usuario">Limite de credito</label>
-  <input type="number" class="input-form" name="num" id="num" [(ngModel)]="comprador.limiteDeCredito" placeholder="somente numeros"><br>
+  <input type="number" class="input-form" name="num" id="num" [(ngModel)]="this.comprador.limiteDeCredito" placeholder="somente numeros"><br>
 
   <button type="button" class="botao-form" (click)="cadastrar()">Cadastrar</button>
 </div>
