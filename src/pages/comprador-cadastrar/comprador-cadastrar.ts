@@ -14,7 +14,7 @@ import { Compra } from 'src/models/compras/compra';
 
 export class CompradorCadastrarComponent implements OnInit {
 
-    // compradores: Comprador[] = [];
+    comprador: Comprador = new Comprador();
 
     constructor(public dialog: MatDialog,
                 private router: Router,
@@ -24,6 +24,7 @@ export class CompradorCadastrarComponent implements OnInit {
 
     ngOnInit(): void {
         // this.getCompradores();
+
     }
 
     goToCadastro(comprador: Comprador) {
