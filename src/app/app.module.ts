@@ -27,6 +27,7 @@ import { CompraCadastrarComponent } from 'src/pages/compra-cadastrar/compra-cada
 import { CompradorComponent } from 'src/pages/comprador/comprador';
 import { CompradorConsultarComponent } from 'src/pages/comprador-consultar/comprador-consultar';
 import { EstoqueCadastrarComponent } from 'src/pages/estoque-cadastrar/estoque-cadastrar';
+import { CompradorCadastrarComponent } from '../pages/comprador-cadastrar/comprador-cadastrar';
 
 const appRoutes: Routes = [
   { path: '',
@@ -96,6 +97,10 @@ const appRoutes: Routes = [
   {
     path: 'estoque-cadastrar',
     component: EstoqueCadastrarComponent
+  },
+  {
+    path: 'comprador-cadastrar',
+    component: CompradorCadastrarComponent
   }
 
 ];
@@ -122,7 +127,8 @@ const appRoutes: Routes = [
     CompradorConsultarComponent,
     CompraCadastrarComponent,
     EstoqueCadastrarComponent,
-    MenuSimplesComponent
+    MenuSimplesComponent,
+    CompradorCadastrarComponent
   ],
   imports: [
     BrowserModule,

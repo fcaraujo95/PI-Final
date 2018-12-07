@@ -19,7 +19,7 @@ export class CompradorComponent {
     public goToCadastroComprador(): void {
       this.compradorService.setSelecionar('');
       this.compradorService.setCompradorParam(new Comprador());
-      // this.router.navigate(['/comprador-cadastrar']);
+      this.router.navigate(['/comprador-cadastrar']);
     }
 
     public goToConsultarComprador(): void {
