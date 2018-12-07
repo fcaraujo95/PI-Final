@@ -8,46 +8,46 @@
 <div class="container">
   <div class="container1">
     <label class="label-form" class="label-form"for="usuario">Nome Fantasia</label>
-    <input type="text" class="input-form" name="firstname" id="usuario" [(ngModel)]="comprador.nome" placeholder="Nome">
+    <input type="text" class="input-form" name="firstname" id="usuario" [(ngModel)]="fornecedor.nomeFantasia" placeholder="Nome">
     <label class="label-form" class="label-form"for="usuario">Razao Social</label>
-    <input type="text" class="input-form" name="sobrenome" id="sobrenome" [(ngModel)]="comprador.sobrenome" placeholder="Sobrenome">
+    <input type="text" class="input-form" name="sobrenome" id="sobrenome" [(ngModel)]="fornecedor.razaoSocial" placeholder="Sobrenome">
     <label class="label-form" class="label-form"for="usuario">CNPJ</label>
-    <input type="text" class="input-form" name="cpf" id="cpf" [(ngModel)]="comprador.cpf" placeholder="CPF"><br>
+    <input type="text" class="input-form" name="cpf" id="cpf" [(ngModel)]="fornecedor.cpf" placeholder="CPF"><br>
   </div>
 
   <div class="container2">
     <label class="label-form" class="label-form"for="usuario">CEP</label>
-    <input type="date" class="input-form" name="data" id="data" [(ngModel)]="comprador.dataDeNascimento" placeholder="Data Nascimento">
+    <input type="date" class="input-form" name="data" id="data" [(ngModel)]="fornecedor.dataDeNascimento" placeholder="Data Nascimento">
     <label class="label-form" class="label-form"for="usuario">Sexo</label>
-    <input type="radio" name="gender" [(ngModel)]="comprador.sexo" value="M">Masculino
-    <input type="radio" name="gender" [(ngModel)]="comprador.sexo" value="F">Feminino<br>
+    <input type="radio" name="gender" [(ngModel)]="fornecedor.sexo" value="M">Masculino
+    <input type="radio" name="gender" [(ngModel)]="fornecedor.sexo" value="F">Feminino<br>
   </div>
 
   <div class="container3">
     <label class="label-form" class="label-form"for="usuario">Logradouro</label>
-    <input type="text" class="input-form" name="logradouro" id="logradouro" [(ngModel)]="comprador.logradouro" placeholder="Logradouro">
+    <input type="text" class="input-form" name="logradouro" id="logradouro" [(ngModel)]="fornecedor.logradouro" placeholder="Logradouro">
     <label class="label-form" class="label-form"for="usuario">Numero</label>
-    <input type="text" class="input-form" name="num" id="num" [(ngModel)]="comprador.numero" placeholder="numero"><br>
+    <input type="text" class="input-form" name="num" id="num" [(ngModel)]="fornecedor.numero" placeholder="numero"><br>
   </div>
 
   <div class="container4">
     <label class="label-form" class="label-form"for="usuario">Complemento</label>
-    <input type="text" class="input-form" name="compl" id="compl" [(ngModel)]="comprador.complemento" placeholder="Complemento">
+    <input type="text" class="input-form" name="compl" id="compl" [(ngModel)]="fornecedor.complemento" placeholder="Complemento">
     <label class="label-form" class="label-form"for="usuario">Bairro</label>
-    <input type="text" class="input-form" name="bairro" id="bairro" [(ngModel)]="comprador.bairro" placeholder="Bairro"><br>
+    <input type="text" class="input-form" name="bairro" id="bairro" [(ngModel)]="fornecedor.bairro" placeholder="Bairro"><br>
   </div>
 
   <label class="label-form" class="label-form"for="usuario">Cidade:  </label>
-  <select [(ngModel)]="comprador.cidade">
+  <select [(ngModel)]="fornecedor.cidade">
     <option *ngFor="let cidade of localizacao" [ngValue]="cidade">  {{cidade.cidade}}</option>
   </select>
   <br>
 
   <label class="label-form" class="label-form"for="usuario">Limite de credito</label>
-  <input type="number" class="input-form" name="num" id="num" [(ngModel)]="comprador.limiteDeCredito" placeholder="somente numeros"><br>
+  <input type="number" class="input-form" name="num" id="num" [(ngModel)]="fornecedor.limiteDeCredito" placeholder="somente numeros"><br>
   <label class="label-form" class="label-form"for="usuario">Formato Juridico</label>
-  <input type="text" class="input-form" name="logradouro" id="logradouro" [(ngModel)]="comprador.logradouro" placeholder="Logradouro">
+  <input type="text" class="input-form" name="logradouro" id="logradouro" [(ngModel)]="fornecedor.logradouro" placeholder="Logradouro">
   <label class="label-form" class="label-form"for="usuario">Regime Tributario</label> <br>
-  <input type="text" class="input-form" name="logradouro" id="logradouro" [(ngModel)]="comprador.logradouro" placeholder="Logradouro">
+  <input type="text" class="input-form" name="logradouro" id="logradouro" [(ngModel)]="fornecedor.logradouro" placeholder="Logradouro">
   <button type="button" class="botao-form" (click)="cadastrar()">Cadastrar</button>
 </div>
