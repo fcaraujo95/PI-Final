@@ -28,6 +28,7 @@ import { CompradorComponent } from 'src/pages/comprador/comprador';
 import { CompradorConsultarComponent } from 'src/pages/comprador-consultar/comprador-consultar';
 import { EstoqueCadastrarComponent } from 'src/pages/estoque-cadastrar/estoque-cadastrar';
 import { CompradorCadastrarComponent } from '../pages/comprador-cadastrar/comprador-cadastrar';
+import { FornecedorCadastrarComponent } from '../pages/fornecedor-cadastrar/fornecedor-cadastrar';
 
 const appRoutes: Routes = [
   { path: '',
@@ -101,6 +102,10 @@ const appRoutes: Routes = [
   {
     path: 'comprador-cadastrar',
     component: CompradorCadastrarComponent
+  },
+  {
+    path: 'fornecedor-cadastrar',
+    component: FornecedorCadastrarComponent
   }
 
 ];
@@ -128,7 +133,8 @@ const appRoutes: Routes = [
     CompraCadastrarComponent,
     EstoqueCadastrarComponent,
     MenuSimplesComponent,
-    CompradorCadastrarComponent
+    CompradorCadastrarComponent,
+    FornecedorCadastrarComponent
   ],
   imports: [
     BrowserModule,
