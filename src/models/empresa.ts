@@ -15,4 +15,20 @@ export class Empresa {
     public numero: string;
     public contatos: Contato[];
     public cidade: Cidade;
+
+    constructor() {
+        this.idEmpresa = 0;
+        this.nomeFantasia = '';
+        this.razaoSocial = '';
+        this.cnpj = '';
+        this.dataDeCriacao = '';
+
+        this.cep = '';
+        this.logadouro = '';
+        this.bairro = '';
+        this.complemento = '';
+        this.numero = '';
+        this.contatos = new Array<Contato>();
+        this.cidade = new Cidade();
+    }
 }

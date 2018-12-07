@@ -5,4 +5,12 @@ export class Fornecedor extends Empresa {
     formatoJuridico: string;
     regimeTributario: string;
     inativo: number;
+
+    constructor() {
+        super();
+        this.id = 0;
+        this.formatoJuridico = '';
+        this.regimeTributario = '';
+        this.inativo = 0;
+    }
 }

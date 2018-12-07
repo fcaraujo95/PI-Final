@@ -23,6 +23,9 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MenuSimplesComponent } from '../components/menu-simples/menu-simples';
 import { ProdutosCadastrarComponent } from '../pages/produtos-cadastrar/produtos-cadastrar';
 import { FornecedorConsultarComponent } from '../pages/fornecedor-consultar/fornecedor-consultar';
+import { CompraCadastrarComponent } from 'src/pages/compra-cadastrar/compra-cadastrar';
+import { CompradorComponent } from 'src/pages/comprador/comprador';
+import { CompradorConsultarComponent } from 'src/pages/comprador-consultar/comprador-consultar';
 
 const appRoutes: Routes = [
   { path: '',
@@ -44,6 +47,10 @@ const appRoutes: Routes = [
   {
     path: 'fornecedor-page',
     component: FornecedorComponent
+  },
+  {
+    path: 'comprador-page',
+    component: CompradorComponent
   },
   {
     path: 'compra-page',
@@ -77,8 +84,14 @@ const appRoutes: Routes = [
     path: 'fornecedor-consultar',
     component: FornecedorConsultarComponent
   },
-
-
+  {
+    path: 'comprador-consultar',
+    component: CompradorConsultarComponent
+  },
+  {
+    path: 'compra-cadastrar',
+    component: CompraCadastrarComponent
+  },
 
 ];
 
@@ -90,6 +103,7 @@ const appRoutes: Routes = [
     ProdutoComponent,
     EstoqueComponent,
     FornecedorComponent,
+    CompradorComponent,
     CompraComponent,
     ClienteComponent,
     VendaComponent,
@@ -100,6 +114,8 @@ const appRoutes: Routes = [
     ProdutosCadastrarComponent,
     ProdutoConsultarComponent,
     FornecedorConsultarComponent,
+    CompradorConsultarComponent,
+    CompraCadastrarComponent,
     MenuSimplesComponent
   ],
   imports: [

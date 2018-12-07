@@ -1,0 +1,63 @@
+<menu-component menuAtivo="comprador"></menu-component>
+<br>
+<br>
+<br>
+
+<div class="container">
+  <div class="jumbotron">
+    <h1>Consulta de Comprador</h1>
+  </div>
+</div>
+
+<body>
+  <div class="table-responsive">
+    <table class="table table-bordered">
+      <ul>
+        <tr>
+          <th>id</th>
+          <th>Nome</th>
+          <th>Sobrenome</th>
+          <th>CPF</th>
+          <th>Limite de Credito</th>
+          <th>Cidade</th>
+          <th>Estado</th>
+        </tr>
+        <tr *ngFor="let comprador of compradores">
+          <td>{{comprador.id}}</td>
+          <td>{{comprador.nome}}</td>
+          <td>{{comprador.sobrenome}}</td>
+          <td>{{comprador.cpf}}</td>
+          <td>{{comprador.limiteDeCredito}}</td>
+          <td>{{comprador.cidade.cidade}}</td>
+          <td>{{comprador.cidade.estado.estado}}</td>
+          <td>
+
+            <div *ngIf="compradorService.getSelecionar() != ''" class="btn-group btn-group-xs" role="group" aria-label="...">
+                <div class="btn-group" role="group">
+                  <button type="button" class="btn btn-primary btn-xs" (click)="goToRetorno(comprador)">Selecionar</button>
+                </div>
+            </div>
+            <div *ngIf="compradorService.getSelecionar() == ''" class="btn-group btn-group-xs" role="group" aria-label="...">
+              <div class="btn-group" role="group">
+                <button type="button" class="btn btn-success btn-xs" (click)="goToCadastro(comprador)">Alterar</button>
+              </div>
+
+              <div *ngIf="comprador.inativo == 0">
+                <div class="btn-group" role="group">
+                  <button type="button" class="btn btn-danger btn-xs" (click)="ativoInativo(comprador)"> Inativar</button>
+                </div>
+              </div>
+              <div *ngIf="comprador.inativo == 1">
+                <div class="btn-group" role="group">
+                  <button type="button" class="btn btn-warning btn-xs" (click)="ativoInativo(comprador)"> Ativar</button>
+                </div>
+              </div>
+
+            </div>
+
+          </td>
+        </tr>
+      </ul>
+    </table>
+  </div>
+</body>

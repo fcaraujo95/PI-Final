@@ -1,6 +1,6 @@
-import { Comprador } from "./comprador";
-import { Fornecedor } from "./fornecedor";
-import { CompraItem } from "./compraItem";
+import { Comprador } from './comprador';
+import { Fornecedor } from './fornecedor';
+import { CompraItem } from './compraItem';
 
 export class Compra {
     id: Number;
@@ -9,4 +9,13 @@ export class Compra {
     comprador: Comprador;
     fornecedor: Fornecedor;
     recebido: Boolean;
+
+    constructor() {
+        this.id = 0;
+        this.compraItens = new Array<CompraItem>();
+        this.dataDaCompra = '';
+        this.comprador = new Comprador();
+        this.fornecedor = new Fornecedor();
+        this.recebido = false;
+    }
 }

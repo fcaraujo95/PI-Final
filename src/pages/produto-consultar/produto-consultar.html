@@ -31,10 +31,17 @@
           <td>{{produto.custo.custo}}</td>
           <td>{{produto.preco.preco}}</td>
           <td>
-            <div class="btn-group btn-group-xs" role="group" aria-label="...">
+
+            <div *ngIf="produtoService.getSelecionar() != ''" class="btn-group btn-group-xs" role="group" aria-label="...">
+                <div class="btn-group" role="group">
+                  <button type="button" class="btn btn-primary btn-xs" (click)="goToRetorno(produto)">Selecionar</button>
+                </div>
+            </div>
+            <div *ngIf="produtoService.getSelecionar() == ''" class="btn-group btn-group-xs" role="group" aria-label="...">
               <div class="btn-group" role="group">
                 <button type="button" class="btn btn-success btn-xs" (click)="goToCadastro(produto)">Alterar</button>
               </div>
+
               <div *ngIf="produto.inativo == 0">
                 <div class="btn-group" role="group">
                   <button type="button" class="btn btn-danger btn-xs" (click)="ativoInativo(produto)"> Inativar</button>
@@ -45,6 +52,7 @@
                   <button type="button" class="btn btn-warning btn-xs" (click)="ativoInativo(produto)"> Ativar</button>
                 </div>
               </div>
+
             </div>
           </td>
         </tr>

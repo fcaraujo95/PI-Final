@@ -18,6 +18,17 @@ export class Produto {
     public inativo: number;
 
     constructor() {
+      this.id = 0;
+      this.nome = '';
+      this.descricao = '';
+      this.ean = '';
+      this.marca = '';
+      this.peso = 0;
+      this.altura = 0;
+      this.largura = 0;
+      this.comprimento = 0;
+      this.estoque = new Estoque();
+      this.inativo = 0;
       this.preco = new Preco();
       this.custo = new Custo();
     }

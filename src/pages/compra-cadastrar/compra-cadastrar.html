@@ -1,0 +1,59 @@
+<menu-component menuAtivo="compra"></menu-component>
+<br>
+<br>
+<br>
+
+<h1 class="title-consulta">Cadastrar Pedido de Compra</h1>
+
+<div class="container-fornecedor">
+    <label for="fornecedor">Fornecedor: </label>
+    <input type="number" [(ngModel)]="compra.fornecedor.id" class="input-form" name="idFornecedor" placeholder="Codigo Fornecedor" (blur)="getFornecedorOnBlur()">
+    <input type="text" [(ngModel)]="compra.fornecedor.nomeFantasia" class="input-form" name="nomeFantasia" placeholder="" readonly>
+    <button type="button" class="selecionar-fornecedor" (click)="getFornecedor()">Pesquisar</button>
+</div>
+<div class="container-comprador">
+    <label for="comprador">Comprador: </label>
+    <input type="number" [(ngModel)]="compra.comprador.id" class="input-form" name="idComprador" placeholder="Codigo Comprador" (blur)="getCompradorOnBlur()">
+    <input type="text" [(ngModel)]="compra.comprador.nome" class="input-form" name="nome" placeholder="" readonly>
+    <button type="button" class="selecionar-comprador" (click)="getComprador()">Pesquisar</button>
+</div>
+<br>
+<br>
+<br>
+<div class="container-CompraItem">
+    <div class="container-produto">
+        <label for="produto">Produto: </label>
+        <input type="number" [(ngModel)]="compraItem.produto.id" class="input-form" name="idProduto" placeholder="Codigo do Produto" (blur)="getProdutoOnBlur()">
+        <input type="text" [(ngModel)]="compraItem.produto.nome" class="input-form" name="nome" placeholder="" readonly>
+        <button type="button" class="selecionar-produto" (click)="getProduto()">Pesquisar</button>
+    </div>
+    <label for="custo">Custo: </label>
+    <input type="number" [(ngModel)]="compraItem.produto.custo.custo" class="input-form" name="idCusto" placeholder="Custo" >
+    <label for="quantidade">Quantidade: </label>
+    <input type="number" [(ngModel)]="compraItem.quantidadeItem" class="input-form" name="idQuantidade" placeholder="Quantidade">
+</div>
+
+<div class="btn-group btn-group-xs" role="group" aria-label="...">
+    <div class="btn-group" role="group">
+        <button type="button" class="btn btn-primary btn-xs" (click)="adicionarItem(this.compraItem)">Adicionar</button>
+    </div>
+</div>
+
+<div class="table-responsive">
+    <table class="table table-bordered">
+        <ul>
+        <tr>
+            <th>id</th>
+            <th>Produto</th>
+            <th>Quantidade</th>
+            <th>Custo</th>
+        </tr>
+        <tr *ngFor="let compraItem of this.compra.compraItens">
+            <td>{{compraItem.produto.id}}</td>
+            <td>{{compraItem.produto.nome}}</td>
+            <td>{{compraItem.quantidadeItem}}</td>
+            <td>{{compraItem.produto.custo.custo}}</td>
+        </tr>
+        </ul>
+    </table>
+</div>

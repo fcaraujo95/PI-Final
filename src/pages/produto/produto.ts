@@ -19,11 +19,13 @@ export class ProdutoComponent {
     private produtoService: ProdutoService) { }
 
   public goToCadastroProduto(): void {
+    this.produtoService.setSelecionar('');
     this.produtoService.setProdutoParam(new Produto());
     this.router.navigate(['/produtos-cadastrar']);
   }
 
   public goToConsultarProduto(): void {
+    this.produtoService.setSelecionar('');
     this.router.navigate(['/produtos-consultar']);
   }
 }

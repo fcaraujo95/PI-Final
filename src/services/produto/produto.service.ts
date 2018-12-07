@@ -10,6 +10,7 @@ import { Produto } from 'src/models/producao/produto';
 export class ProdutoService {
 
   private produto: Produto;
+  private selecionar: string;
 
   constructor( private http: HttpClient) {}
 
@@ -18,7 +19,7 @@ export class ProdutoService {
   }
 
   getProdutoId(produto: Produto): Observable<any> {
-    return this.http.post('http://localhost:8080/pi/servicos/produto/id', produto);
+    return this.http.post('http://localhost:8080/pi/servicos/produto/idAtual', produto);
   }
 
   inserirProduto(produto: Produto): Observable<any> {
@@ -41,5 +42,12 @@ export class ProdutoService {
     this.produto = produto;
   }
 
+  getSelecionar(): string {
+    return this.selecionar;
+  }
+
+  setSelecionar(selecionar: string) {
+    this.selecionar = selecionar;
+  }
 }
 

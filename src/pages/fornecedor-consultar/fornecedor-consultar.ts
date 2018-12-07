@@ -3,6 +3,8 @@ import { Fornecedor } from 'src/models/compras/fornecedor';
 import { FornecedorService } from 'src/services/compras/fornecedor.service';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material';
+import { CompraService } from 'src/services/compras/compra.service';
+import { Compra } from 'src/models/compras/compra';
 
 @Component({
     selector: 'fornecedor-consultar',
@@ -16,7 +18,8 @@ export class FornecedorConsultarComponent implements OnInit {
 
     constructor(public dialog: MatDialog,
                 private router: Router,
-                private fornecedorService: FornecedorService
+                private fornecedorService: FornecedorService,
+                private compraService: CompraService
                 ) {}
 
     ngOnInit(): void {
@@ -38,8 +41,12 @@ export class FornecedorConsultarComponent implements OnInit {
     }
 
     goToRetorno(fornecedor: Fornecedor) {
-        this.fornecedorService.setSelecionar(false);
-        this.fornecedorService.setFornecedorParam(fornecedor);
+        if (this.fornecedorService.getSelecionar() === 'compra-cadastrar') {
+            this.compraService.getCompraParam().fornecedor = fornecedor;
+        }
+
+        this.router.navigate(['/' + this.fornecedorService.getSelecionar()]);
+        this.fornecedorService.setSelecionar('');
     }
 
     ativoInativo(fornecedor: Fornecedor) {

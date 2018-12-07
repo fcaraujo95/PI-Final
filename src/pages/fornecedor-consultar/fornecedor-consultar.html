@@ -32,12 +32,12 @@
           <td>{{fornecedor.cidade.estado.estado}}</td>
           <td>
 
-            <div *ngIf="fornecedorService.getSelecionar() == true" class="btn-group btn-group-xs" role="group" aria-label="...">
+            <div *ngIf="fornecedorService.getSelecionar() != ''" class="btn-group btn-group-xs" role="group" aria-label="...">
                 <div class="btn-group" role="group">
                   <button type="button" class="btn btn-primary btn-xs" (click)="goToRetorno(fornecedor)">Selecionar</button>
                 </div>
             </div>
-            <div *ngIf="fornecedorService.getSelecionar() == false" class="btn-group btn-group-xs" role="group" aria-label="...">
+            <div *ngIf="fornecedorService.getSelecionar() == ''" class="btn-group btn-group-xs" role="group" aria-label="...">
               <div class="btn-group" role="group">
                 <button type="button" class="btn btn-success btn-xs" (click)="goToCadastro(fornecedor)">Alterar</button>
               </div>
