@@ -1,12 +1,12 @@
 import { Produto } from '../producao/produto';
 
 export class CompraItem {
-    id: Number;
-    idCompra: Number;
+    id: number;
+    idCompra: number;
     produto: Produto;
-    quantidadeItem: Number;
-    custoItem: Number;
-    totalItem: Number ;
+    quantidadeItem: number;
+    custoItem: number;
+    totalItem: number ;
 
     constructor() {
         this.id = 0;

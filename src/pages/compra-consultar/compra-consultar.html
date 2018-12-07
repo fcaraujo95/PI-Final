@@ -21,8 +21,8 @@
         </tr>
         <tr *ngFor="let compra of compras">
           <td>{{compra.id}}</td>
-          <td>{{compra.nomeComprador}}</td>
-          <td>{{compra.nomeFantasiaFornecedor}}</td>
+          <td>{{compra.comprador.nome}}</td>
+          <td>{{compra.fornecedor.nomeFantasia}}</td>
           <td>{{compra.dataDaCompra}}</td>
           <td>
 
