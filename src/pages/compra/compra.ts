@@ -22,11 +22,15 @@ export class CompraComponent {
     public goToCadastroCompra(): void {
       this.compraItemService.setCompraItemParam(new CompraItem);
       this.compraService.setCompraParam(new Compra());
+      this.compraService.setSelecionar('');
       this.router.navigate(['/compra-cadastrar']);
     }
 
     public goToConsultarCompra(): void {
-
+      this.compraItemService.setCompraItemParam(new CompraItem);
+      this.compraService.setCompraParam(new Compra());
+      this.compraService.setSelecionar('');
+      this.router.navigate(['/compra-consultar']);
     }
 
 }

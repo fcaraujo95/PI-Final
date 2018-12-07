@@ -36,6 +36,7 @@ export class CompraCadastrarComponent implements OnInit {
     ngOnInit(): void {
         this.compra = this.compraService.getCompraParam();
         this.compraItem = this.compraItemService.getCompraItemParam();
+        console.log(JSON.stringify(this.compra.compraItens));
     }
 
     getFornecedor() {
@@ -106,6 +107,7 @@ export class CompraCadastrarComponent implements OnInit {
         }
 
         compraItem.custoItem = this.compraItem.produto.custo.custo;
+        compraItem.totalItem = this.compraItem.custoItem * this.compraItem.quantidadeItem ;
         this.compra.compraItens.push(compraItem);
         this.compraItem = new CompraItem();
         console.log(this.compra.compraItens.length);

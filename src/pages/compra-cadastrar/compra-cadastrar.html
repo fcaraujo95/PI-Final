@@ -47,16 +47,21 @@
             <th>Produto</th>
             <th>Quantidade</th>
             <th>Custo</th>
+            <th>Custo Total</th>
         </tr>
-        <tr *ngFor="let compraItem of this.compra.compraItens">
-            <td>{{compraItem.produto.id}}</td>
-            <td>{{compraItem.produto.nome}}</td>
-            <td>{{compraItem.quantidadeItem}}</td>
-            <td>{{compraItem.produto.custo.custo}}</td>
+        <tr *ngFor="let compraIt of this.compra.compraItens">
+            <td>{{compraIt.produto.id}}</td>
+            <td>{{compraIt.produto.nome}}</td>
+            <td>{{compraIt.quantidadeItem}}</td>
+            <td>{{compraIt.custoItem}}</td>
+            <td>{{compraIt.totalItem}}</td>
         </tr>
         </ul>
     </table>
 </div>
+
+<br>
+
 <br>
 <div class="btn-group btn-group-xs" role="group" aria-label="...">
     <div class="btn-group" role="group">

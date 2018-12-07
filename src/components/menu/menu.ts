@@ -119,7 +119,7 @@ export class MenuComponent implements OnInit{
     this.router.navigate(['/comprador-page']);
   }
 
-  goToCompra(){
+  goToCompra() {
     let element = document.getElementById('compra');
     element.classList.add("active");
     this.router.navigate(['/compra-page']);
