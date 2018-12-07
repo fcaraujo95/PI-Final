@@ -13,6 +13,8 @@ export class CompraService {
 
   private compra: Compra;
 
+  private selecionar: string;
+
   constructor( private http: HttpClient) {}
 
   inserirCompra(compra: Compra): Observable<any> {
@@ -59,6 +61,12 @@ export class CompraService {
     this.compra = compra;
   }
 
+  getSelecionar(): string {
+    return this.selecionar;
+  }
+  setSelecionar(selecionar: string) {
+    this.selecionar = selecionar;
+  }
 }
 
 

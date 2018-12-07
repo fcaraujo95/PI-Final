@@ -1,0 +1,44 @@
+<menu-component menuAtivo="produto"></menu-component>
+<br>
+<br>
+<br>
+
+<div class="container">
+  <div class="jumbotron">
+    <h1>Consulta de Produto</h1>
+  </div>
+</div>
+
+<body>
+  <div class="table-responsive">
+    <table class="table table-bordered">
+      <ul>
+        <tr>
+          <th>id</th>
+          <th>Comprador</th>
+          <th>Fornecedor</th>
+          <th>Data da Compra</th>
+        </tr>
+        <tr *ngFor="let compra of compras">
+          <td>{{compra.id}}</td>
+          <td>{{compra.nomeComprador}}</td>
+          <td>{{compra.nomeFantasiaFornecedor}}</td>
+          <td>{{compra.dataDaCompra}}</td>
+          <td>
+
+            <div *ngIf="compraService.getSelecionar() != ''" class="btn-group btn-group-xs" role="group" aria-label="...">
+                <div class="btn-group" role="group">
+                  <button type="button" class="btn btn-primary btn-xs" (click)="goToRetorno(compra)">Selecionar</button>
+                </div>
+            </div>
+            <div *ngIf="compraService.getSelecionar() == ''" class="btn-group btn-group-xs" role="group" aria-label="...">
+              <div class="btn-group" role="group">
+                <button type="button" class="btn btn-success btn-xs" (click)="goToCadastro(compra)">Alterar</button>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </ul>
+    </table>
+  </div>
+</body>

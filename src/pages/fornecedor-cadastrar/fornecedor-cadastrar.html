@@ -1,0 +1,20 @@
+<menu-component menuAtivo="home"></menu-component>
+<br>
+<br>
+<br>
+
+<h1 class="title-consulta">Cadastro de Comprador</h1>
+
+<div class="container">
+  <div class="container1">
+    <label class="label-form" class="label-form"for="usuario">Nome</label>
+    <input type="text" class="input-form" name="firstname" id="usuario" [(ngModel)]="usuario.nome" placeholder="Nome">
+    <label class="label-form" class="label-form"for="usuario">Sobrenome</label>
+    <input type="text" class="input-form" name="sobrenome" id="sobrenome" [(ngModel)]="usuario.sobrenome" placeholder="Sobrenome">
+    <label class="label-form" class="label-form"for="usuario">CPF</label>
+    <input type="text" class="input-form" name="cpf" id="cpf" [(ngModel)]="usuario.cpf" placeholder="CPF"><br>
+  </div>
+
+  <button type="button" class="botao-form" (click)="cadastrar()">Cadastrar</button>
+
+  <br>
