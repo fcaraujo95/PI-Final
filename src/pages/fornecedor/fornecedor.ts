@@ -19,11 +19,13 @@ export class FornecedorComponent {
     private fornecedorService: FornecedorService) { }
 
     public goToCadastroFornecedor(): void {
+      this.fornecedorService.setSelecionar(false);
       this.fornecedorService.setFornecedorParam(new Fornecedor());
       // this.router.navigate(['/fornecedor-cadastrar']);
     }
 
     public goToConsultarProduto(): void {
+      this.fornecedorService.setSelecionar(false);
       this.router.navigate(['/fornecedor-consultar']);
     }
 }

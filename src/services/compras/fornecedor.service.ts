@@ -10,6 +10,7 @@ import { Fornecedor } from 'src/models/compras/fornecedor';
 export class FornecedorService {
 
   private fornecedor: Fornecedor;
+  private selecionar: boolean;
 
   constructor( private http: HttpClient) {}
 
@@ -43,6 +44,13 @@ export class FornecedorService {
 
   setFornecedorParam(fornecedor: Fornecedor) {
     this.fornecedor = fornecedor;
+  }
+
+  getSelecionar(): boolean {
+    return this.selecionar;
+  }
+  setSelecionar(selecionar: boolean) {
+    this.selecionar = selecionar;
   }
 
 }
