@@ -26,6 +26,7 @@ import { FornecedorConsultarComponent } from '../pages/fornecedor-consultar/forn
 import { CompraCadastrarComponent } from 'src/pages/compra-cadastrar/compra-cadastrar';
 import { CompradorComponent } from 'src/pages/comprador/comprador';
 import { CompradorConsultarComponent } from 'src/pages/comprador-consultar/comprador-consultar';
+import { EstoqueCadastrarComponent } from 'src/pages/estoque-cadastrar/estoque-cadastrar';
 
 const appRoutes: Routes = [
   { path: '',
@@ -92,6 +93,10 @@ const appRoutes: Routes = [
     path: 'compra-cadastrar',
     component: CompraCadastrarComponent
   },
+  {
+    path: 'estoque-cadastrar',
+    component: EstoqueCadastrarComponent
+  }
 
 ];
 
@@ -116,6 +121,7 @@ const appRoutes: Routes = [
     FornecedorConsultarComponent,
     CompradorConsultarComponent,
     CompraCadastrarComponent,
+    EstoqueCadastrarComponent,
     MenuSimplesComponent
   ],
   imports: [

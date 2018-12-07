@@ -108,5 +108,39 @@ export class CompraCadastrarComponent implements OnInit {
         compraItem.custoItem = this.compraItem.produto.custo.custo;
         this.compra.compraItens.push(compraItem);
         this.compraItem = new CompraItem();
+        console.log(this.compra.compraItens.length);
+    }
+
+    cadastrar(compra: Compra) {
+        if (compra.fornecedor.id === 0) {
+            alert('Atenção... Favor informar um fornecedor!');
+            return false;
+        }
+
+        if (compra.comprador.id === 0) {
+            alert('Atenção... Favor informar um comprador!');
+            return false;
+        }
+
+        if (compra.compraItens.length <= 0) {
+            alert('Atenção... Favor informar pelo menos um produto!');
+            return false;
+        }
+
+        this.compraService.inserirCompra(compra).subscribe(
+            (com: Compra) => {
+                if (com.id > 0) {
+                    alert('Pedido de compra salvo com sucesso!');
+                    this.router.navigate(['/compra-page']);
+                } else {
+                    alert('Não foi possivel salvar, acione o suporte tecnico!');
+                    this.router.navigate(['/compra-page']);
+                }
+            },
+            (error) => {
+                alert(error.message);
+            }
+        );
+
     }
 }

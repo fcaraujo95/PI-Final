@@ -6,6 +6,7 @@ import { ProdutoService } from 'src/services/produto/produto.service';
 import { CompraService } from 'src/services/compras/compra.service';
 import { CompraItemService } from 'src/services/produto/compraItem.service';
 import { CompraItem } from 'src/models/compras/compraItem';
+import { EstoqueService } from 'src/services/produto/estoque.service';
 
 @Component({
     selector: 'produto-consultar',
@@ -21,7 +22,8 @@ export class ProdutoConsultarComponent implements OnInit {
                 private router: Router,
                 private produtoService: ProdutoService,
                 private compraService: CompraService,
-                private compraItemService: CompraItemService
+                private compraItemService: CompraItemService,
+                private estoqueService: EstoqueService
                 ) {}
 
     ngOnInit(): void {
@@ -44,6 +46,10 @@ export class ProdutoConsultarComponent implements OnInit {
     goToRetorno(produto: Produto) {
         if (this.produtoService.getSelecionar() === 'compra-cadastrar') {
             this.compraItemService.getCompraItemParam().produto = produto;
+        }
+
+        if (this.produtoService.getSelecionar() === 'estoque-cadastrar') {
+            this.produtoService.setProdutoParam(produto);
         }
 
         this.router.navigate(['/' + this.produtoService.getSelecionar()]);

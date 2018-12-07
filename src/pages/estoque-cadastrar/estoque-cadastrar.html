@@ -1,0 +1,30 @@
+<menu-component menuAtivo="estoque"></menu-component>
+<br>
+<br>
+<br>
+
+<div class="container">
+    <div class="jumbotron">
+        <h1>Ajuste de Estoque</h1>
+    </div>
+</div>
+
+<div class="container-estoque">
+    <label for="estoque">Produto: </label>
+    <input type="number" [(ngModel)]="this.produto.id" class="input-form" name="idEstoque" placeholder="Codigo do Produto" (blur)="getProdutoOnBlur()">
+    <input type="text" [(ngModel)]="this.produto.nome" class="input-form" name="nome" placeholder="" readonly>
+    <button type="button" class="selecionar-estoque" (click)="getProduto()">Pesquisar</button>
+</div>
+
+<label for="quantidade">Quantidade: </label>
+<input type="number" [(ngModel)]="this.estoque.quantidade" class="input-form" name="idQuantidade" placeholder="Quantidade">
+<br>
+<label for="motivo">Motivo: </label>
+<input type="text" [(ngModel)]="this.estoque.motivo" class="input-form" name="motivo" placeholder="Motivo">
+
+<br>
+<div class="btn-group btn-group-xs" role="group" aria-label="...">
+    <div class="btn-group" role="group">
+        <button type="button" class="btn btn-success btn-xs" (click)="cadastrar(this.estoque)">Salvar</button>
+    </div>
+</div>
