@@ -14,7 +14,7 @@ import { Compra } from 'src/models/compras/compra';
 
 export class CompradorCadastrarComponent implements OnInit {
 
-    compradores: Comprador[] = [];
+    // compradores: Comprador[] = [];
 
     constructor(public dialog: MatDialog,
                 private router: Router,
@@ -23,16 +23,7 @@ export class CompradorCadastrarComponent implements OnInit {
                 ) {}
 
     ngOnInit(): void {
-        this.getCompradores();
-    }
-
-    getCompradores() {
-        this.compradorService.getCompradores().subscribe(
-            (compradores: Comprador[]) => {
-                this.compradores = compradores;
-                console.log(JSON.stringify(this.compradores));
-            }
-        );
+        // this.getCompradores();
     }
 
     goToCadastro(comprador: Comprador) {
@@ -61,7 +52,7 @@ export class CompradorCadastrarComponent implements OnInit {
                 if (comp.id === 0) {
                     alert('Não foi possivel inativar');
                 }
-                this.getCompradores();
+                // this.getCompradores();
             }, (error) => {
                 console.log(JSON.stringify(error.message));
               }
