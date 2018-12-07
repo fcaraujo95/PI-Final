@@ -21,7 +21,7 @@ export class FornecedorComponent {
     public goToCadastroFornecedor(): void {
       this.fornecedorService.setSelecionar('');
       this.fornecedorService.setFornecedorParam(new Fornecedor());
-      // this.router.navigate(['/fornecedor-cadastrar']);
+      this.router.navigate(['/fornecedor-cadastrar']);
     }
 
     public goToConsultarProduto(): void {
