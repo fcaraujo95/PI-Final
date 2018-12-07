@@ -50,6 +50,7 @@ export class EstoqueCadastrarComponent implements OnInit {
     }
 
     cadastrar(estoque: Estoque) {
+        estoque.idProduto = this.produto.id;
 
         if (estoque.idProduto === 0) {
             alert('Atenção... favor informar um produto!');
